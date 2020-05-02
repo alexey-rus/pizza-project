@@ -8361,7 +8361,7 @@ textarea.form-control {
   bottom: auto;
   user-select: none;
   /*display: none;*/
-  z-index: 2; }
+  z-index: 4; }
   .cart-button:hover .cb-wrapper {
     background: #fac564;
     transition: all 0.3s ease; }
