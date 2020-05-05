@@ -11,7 +11,6 @@
 
 <link rel="stylesheet" href="/css/owl.carousel.min.css">
 <link rel="stylesheet" href="/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="/css/magnific-popup.css">
 
 <link rel="stylesheet" href="/css/aos.css">
 
