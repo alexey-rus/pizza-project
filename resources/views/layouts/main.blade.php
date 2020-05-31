@@ -9,18 +9,16 @@
 @yield('content')
 
 @include('layouts._parts.footer')
-@include('layouts._parts.cart')
+@include('cart.popup')
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.easing.1.3.js"></script>
-<script src="/js/jquery.waypoints.min.js"></script>
-<script src="/js/jquery.stellar.min.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/aos.js"></script>
-<script src="/js/jquery.animateNumber.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+<script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/aos.js') }}"></script>
+<script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
 @stack('scripts')
 

@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'IndexController@index')->name('index');
+
+Route::post('/cart/add/{product}', 'CartController@add')->name('cart.add');
+Route::delete('/cart/remove/{itemId}', 'CartController@remove')->name('cart.remove');
+Route::put('/cart/update/{itemId}', 'CartController@update')->name('cart.update');

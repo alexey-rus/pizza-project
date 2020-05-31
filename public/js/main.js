@@ -7,20 +7,12 @@ AOS.init({
 
     "use strict";
 
-    $(window).stellar({
-        responsive: true,
-        parallaxBackgrounds: true,
-        parallaxElements: true,
-        horizontalScrolling: false,
-        hideDistantElements: false,
-        scrollProperty: 'scroll',
-        horizontalOffset: 0,
-        verticalOffset: 0
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
-
-
-
-    var carousel = function () {
+    const carousel = function () {
         $('.home-slider').owlCarousel({
             loop: true,
             autoplay: true,
@@ -37,26 +29,26 @@ AOS.init({
     carousel();
 
     $('nav .dropdown').hover(function () {
-        var $this = $(this);
+        const $this = $(this);
         $this.addClass('show');
         $this.find('> a').attr('aria-expanded', true);
         $this.find('.dropdown-menu').addClass('show');
     }, function () {
-        var $this = $(this);
+        const $this = $(this);
         $this.removeClass('show');
         $this.find('> a').attr('aria-expanded', false);
         $this.find('.dropdown-menu').removeClass('show');
     });
 
 
-    var counter = function () {
+    const counter = function () {
 
         $('#section-counter').waypoint(function (direction) {
 
             if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
-                var numberStep = $.animateNumber.numberStepFactories.separator(',');
+                let numberStep = $.animateNumber.numberStepFactories.separator(',');
                 $('.number').each(function () {
-                    var $this = $(this),
+                    const $this = $(this),
                         num = $this.data('number');
                     $this.animateNumber(
                         {
@@ -73,8 +65,8 @@ AOS.init({
     };
     counter();
 
-    var contentWayPoint = function () {
-        var i = 0;
+    const contentWayPoint = function () {
+        let i = 0;
         $('.ftco-animate').waypoint(function (direction) {
             if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
                 i++;
@@ -82,9 +74,9 @@ AOS.init({
                 setTimeout(function () {
 
                     $('body .ftco-animate.item-animate').each(function (k) {
-                        var el = $(this);
+                        const el = $(this);
                         setTimeout(function () {
-                            var effect = el.data('animate-effect');
+                            const effect = el.data('animate-effect');
                             if (effect === 'fadeIn') {
                                 el.addClass('fadeIn ftco-animated');
                             } else if (effect === 'fadeInLeft') {

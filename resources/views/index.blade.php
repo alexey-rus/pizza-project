@@ -39,7 +39,7 @@
 
 </section>
 
-@include('_parts.menu')
+@include('_parts.products')
 
 <section class="ftco-section ftco-services">
     <div class="overlay"></div>
