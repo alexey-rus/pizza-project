@@ -3,17 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-
+use Darryldecode\Cart\CartCondition;
 class CartController extends Controller
 {
-    protected function _getCart()
-    {
-        return [
-            'rows'     => \Cart::getContent()->sort(),
-            'subTotal' => \Cart::getSubTotal(),
-            'isEmpty'  => \Cart::isEmpty()
-        ];
-    }
+
 
     public function add(Product $product)
     {
@@ -62,5 +55,25 @@ class CartController extends Controller
                 'subtotal' => \Cart::getSubTotal(),
             ]
         );
+    }
+
+    public function checkout()
+    {
+        $deliveryCost = config('shop.delivery_cost');
+        $condition = new CartCondition([
+            'name'   => 'Shipping cost',
+            'type'   => 'shipping',
+            'target' => 'total',
+            'value'  => $deliveryCost,
+            'order'  => 1
+        ]);
+        \Cart::condition($condition);
+
+        $cart = $this->_getCart();
+
+        $cart['total'] = \Cart::getTotal();
+
+        return view('cart.checkout', compact('cart', 'deliveryCost'));
+
     }
 }

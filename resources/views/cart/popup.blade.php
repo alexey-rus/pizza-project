@@ -1,9 +1,6 @@
 @push('scripts')
     <script src="{{ asset('js/particles/cart.js') }}"></script>
 @endpush
-<div id="cartToast" role="alert" aria-live="polite" aria-atomic="true">
-    <div role="alert" aria-live="assertive" aria-atomic="true">Added to cart</div>
-</div>
 <div id="cartButton" class="cart-button" data-toggle="modal" data-target="#cartModal">
     <div class="cb-wrapper">
         <div class="cb-icon">
@@ -80,19 +77,3 @@
         </div>
     </div>
 </div>
-<?/*
-  <div class="row py-5 p-3 bg-white">
-                    <div class="col-lg-12">
-                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
-                        <div class="p-4">
-                            <ul class="list-unstyled mb-4">
-                                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
-                                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
-                                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                                    <h5 class="font-weight-bold">$400.00</h5>
-                                </li>
-                            </ul><a href="#" class="btn btn-primary py-3 px-5">Procceed to checkout</a>
-                        </div>
-                    </div>
-                </div>
-*/?>

@@ -7,8 +7,6 @@ class Cart {
         $this.toastMessage = $('#cartToast');
         $this.proxy();
         $this.initializeEvents();
-        $('.toast').toast(option)
-
     }
     addItem(e) {
         e.preventDefault();
@@ -20,10 +18,7 @@ class Cart {
             type: 'POST',
             url: '/cart/add/' + productId
         })
-        .done(function(data) {
-            $this.refreshCart(data);
-            $this.toastMessage.toast();
-        })
+        .done($this.refreshCart)
         .fail($this.errorHandler);
     }
     changeQuantity(e) {
