@@ -30,7 +30,7 @@ class Order {
     }
 
     orderCreatedHandler(data) {
-console.log(data);
+        window.location = '/order/show/' + data.order_token;
     }
 
     errorHandler(jqXHR, textStatus, errorThrown) {

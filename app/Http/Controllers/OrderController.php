@@ -22,10 +22,16 @@ class OrderController extends Controller
 
         return response()->json(
             [
-                'order_id' => $order->id
+                'order_token' => $order->token,
             ]
         );
 
+    }
+
+    public function show(string $token)
+    {
+        $order = Order::where('token', '=', $token)->firstOrFail();
+        return view('order.show', compact('order'));
     }
 
 }

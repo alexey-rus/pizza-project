@@ -129,4 +129,6 @@
         </div>
     </div>
 </section>
+@include('cart.popup')
+
 @endsection

@@ -19,7 +19,9 @@ class Order extends Model
     public function addProducts(CartCollection $products)
     {
         foreach ($products as $product) {
-            $this->products()->create(['product_id' => $product->id, 'quantity' => $product->quantity]);
+            $this->products()->create(
+                ['product_id' => $product->id, 'quantity' => $product->quantity, 'price' => $product->getPriceSum()]
+            );
         }
     }
 

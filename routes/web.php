@@ -19,4 +19,6 @@ Route::post('/cart/add/{product}', 'CartController@add')->name('cart.add');
 Route::delete('/cart/remove/{itemId}', 'CartController@remove')->name('cart.remove');
 Route::put('/cart/update/{itemId}', 'CartController@update')->name('cart.update');
 Route::get('/checkout', 'CartController@checkout')->name('cart.checkout');
+
 Route::post('/order/create', 'OrderController@create')->name('order.create');
+Route::get('/order/show/{token}', 'OrderController@show')->name('order.show');

@@ -28,9 +28,7 @@
                     </tr>
                     </thead>
                     <tbody class="products-list">
-                    @if (!$cart['isEmpty'])
-                        @include('cart._items_checkout')
-                    @endif
+                    @include('cart._items_checkout')
                     </tbody>
                 </table>
             </div>
