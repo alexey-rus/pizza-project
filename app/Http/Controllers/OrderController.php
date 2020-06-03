@@ -11,6 +11,9 @@ class OrderController extends Controller
 
     public function create(CreateOrder $request)
     {
+        if (\Cart::isEmpty())
+            abort(400, 'Cart is empty');
+
         $requestData = $request->validated();
         $requestData['total_amount'] = \Cart::getTotal();
         $order = Order::create($requestData);
