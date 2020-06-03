@@ -12,10 +12,14 @@ class OrderController extends Controller
     public function create(CreateOrder $request)
     {
         $requestData = $request->validated();
-var_dump($requestData);die();
+        $requestData['total_amount'] = \Cart::getTotal();
+        $order = Order::create($requestData);
+        $order->addProducts(\Cart::getContent());
+        \Cart::clear();
+
         return response()->json(
             [
-
+                'order_id' => $order->id
             ]
         );
 

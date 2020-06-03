@@ -16,10 +16,11 @@ class Order {
         $this.form.submit($this.createOrder);
     }
 
-    createOrder() {
+    createOrder(e) {
         e.preventDefault();
         const $this = this;
         $.ajax({
+            data: $this.form.serialize(),
             dataType: 'json',
             type: 'POST',
             url: '/order/create'

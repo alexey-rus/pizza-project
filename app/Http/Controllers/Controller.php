@@ -14,9 +14,10 @@ class Controller extends BaseController
     protected function _getCart()
     {
         return [
-            'rows'     => \Cart::getContent()->sort(),
-            'subTotal' => \Cart::getSubTotal(),
-            'isEmpty'  => \Cart::isEmpty()
+            'rows'          => \Cart::getContent()->sort(),
+            'subTotal'      => \Cart::getSubTotal(),
+            'totalQuantity' => \Cart::getTotalQuantity(),
+            'isEmpty'       => \Cart::isEmpty()
         ];
     }
 }

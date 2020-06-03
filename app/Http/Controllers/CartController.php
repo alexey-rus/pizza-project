@@ -20,7 +20,7 @@ class CartController extends Controller
         ]);
         return response()->json(
             [
-                'items'    => \Cart::getContent()->count(),
+                'items'    => \Cart::getTotalQuantity(),
                 'subtotal' => \Cart::getSubTotal(),
                 'view'     => view('cart._items', ['cart' => $this->_getCart()])->render(),
             ]
@@ -38,7 +38,7 @@ class CartController extends Controller
         ]);
         return response()->json(
             [
-                'items'          => \Cart::getContent()->count(),
+                'items'          => \Cart::getTotalQuantity(),
                 'subtotal'       => \Cart::getSubTotal(),
                 'itemPriceTotal' => \Cart::get($itemId)->getPriceSum(),
             ]
@@ -51,7 +51,7 @@ class CartController extends Controller
         \Cart::remove($itemId);
         return response()->json(
             [
-                'items'    => \Cart::getContent()->count(),
+                'items'    => \Cart::getTotalQuantity(),
                 'subtotal' => \Cart::getSubTotal(),
             ]
         );

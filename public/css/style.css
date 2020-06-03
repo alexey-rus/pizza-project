@@ -7750,10 +7750,10 @@ h1, h2, h3, h4, h5,
     color: #6c757d; }
   .order-form .form-control:-ms-input-placeholder {
     /* IE 10+ */
-    color: rgba(255, 255, 255, 0.9); }
+    color: #6c757d; }
   .order-form .form-control:-moz-placeholder {
     /* Firefox 18- */
-    color: rgba(255, 255, 255, 0.9); }
+    color: #6c757d; }
   .order-form .form-control:focus, .order-form .form-control:active {
     border-color: #fac564 !important; }
 .order-form textarea.form-control {
