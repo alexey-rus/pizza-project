@@ -6,7 +6,7 @@
 @endpush
 @section('content')
 @if (!$cart['isEmpty'])
-<div class="full-cart container">
+<div class="container">
 
     <div class="row py-5 p-3 bg-white">
         <div class="col-md-6 bg-white">
@@ -79,7 +79,7 @@
                         </label>
                     </div>
                     <div class="form-group mt-5">
-                        <input type="submit" value="Order" class="btn btn-primary py-3 px-4">
+                        <button type="submit" class="btn btn-primary py-3 px-4">Order</button>
                     </div>
                 </form>
             </div>
@@ -87,6 +87,12 @@
     </div>
 </div>
 @else
-<h3 class="empty-cart text-muted {{ !$cart['isEmpty'] ? 'd-none' : '' }}">Cart is empty.</h3>
+<div class="container">
+    <div class="row py-5 p-3 bg-white">
+        <div class="col-md-6 bg-white">
+            <h3 class="empty-cart text-muted {{ !$cart['isEmpty'] ? 'd-none' : '' }}">Cart is empty. <a href="{{ route('index')  }}">Go back.</a></h3>
+        </div>
+    </div>
+</div>
 @endif
 @endsection

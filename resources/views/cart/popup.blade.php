@@ -9,7 +9,7 @@
         @if (!$cart['isEmpty'])
         <span class="cb-label cb-subtotal">${{ $cart['subTotal'] }}</span>
         <div class="cb-counter">
-            <span class="cb-counter-label">{{ $cart['rows']->count() }}</span>
+            <span class="cb-counter-label">{{ $cart['totalQuantity'] }}</span>
         </div>
         @else
         <span class="d-none cb-label cb-subtotal"></span>
@@ -67,7 +67,7 @@
                                         <h5 class="font-weight-bold subtotal-value">${{ $cart['subTotal'] }}</h5>
                                     </li>
                                 </ul>
-                                <a href="#" class="btn btn-primary py-3 px-5">Proceed to checkout</a>
+                                <a href="{{ route('cart.checkout') }}" class="btn btn-primary py-3 px-5">Proceed to checkout</a>
                             </div>
                         </div>
                     </div>
