@@ -579,7 +579,7 @@ h1, h2, h3, h4, h5,
       background: none;
       border-width: 1px;
       color: $white;
-      &:hover, &:focus, &:active {
+      &:hover, &:focus, &.loading {
         background: $primary;
         border-color: $primary;
         color: $black;
@@ -595,6 +595,14 @@ h1, h2, h3, h4, h5,
       background: $black;
       border-color: $black;
       color: $white;
+    }
+  }
+  .spinner {
+    display: none;
+  }
+  &.loading {
+    .spinner {
+      display: inline-block;
     }
   }
 }

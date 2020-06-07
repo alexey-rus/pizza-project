@@ -19,14 +19,29 @@ class Order {
     createOrder(e) {
         e.preventDefault();
         const $this = this;
+        const btn = $this.form.find('[type="submit"]');
         $.ajax({
             data: $this.form.serialize(),
             dataType: 'json',
             type: 'POST',
+            beforeSend: function () {
+                $this.blockBtn(btn);
+            },
             url: '/order/create'
         })
-            .done($this.orderCreatedHandler)
-            .fail($this.errorHandler);
+            .done(function(data) {
+                $this.orderCreatedHandler(data);
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                $this.errorHandler(jqXHR, textStatus, errorThrown);
+                $this.unBlockBtn(btn);
+            });
+    }
+    blockBtn(btn) {
+        btn.addClass('loading').attr('data-text', btn.text()).text('Loading...').prop('disabled', true);
+    }
+    unBlockBtn(btn) {
+        btn.removeClass('loading').text(btn.attr('data-text')).prop('disabled', false);
     }
 
     orderCreatedHandler(data) {

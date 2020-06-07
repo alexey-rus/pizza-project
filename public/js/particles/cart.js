@@ -11,15 +11,31 @@ class Cart {
     addItem(e) {
         e.preventDefault();
         const $this = this;
-        const productId = $(e.target).parents('.product').data('id');
+        const btn = $(e.target);
+        const productId = btn.parents('.product').data('id');
 
         $.ajax({
             dataType: 'json',
             type: 'POST',
+            beforeSend: function () {
+                $this.blockBtn(btn);
+            },
             url: '/cart/add/' + productId
         })
-        .done($this.refreshCart)
-        .fail($this.errorHandler);
+        .done(function(data) {
+            $this.refreshCart(data);
+            $this.unBlockBtn(btn);
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            $this.errorHandler(jqXHR, textStatus, errorThrown);
+            $this.unBlockBtn(btn);
+        });
+    }
+    blockBtn(btn) {
+        btn.addClass('loading').attr('data-text', btn.text()).text('Loading...').prop('disabled', true);
+    }
+    unBlockBtn(btn) {
+        btn.removeClass('loading').text(btn.attr('data-text')).prop('disabled', false);
     }
     changeQuantity(e) {
         const $this = this;
@@ -74,6 +90,9 @@ class Cart {
         } else {
             $this.cartPopup.find('.full-cart').addClass('d-none');
             $this.cartPopup.find('.empty-cart').removeClass('d-none');
+
+            $this.cartButton.find('.cb-label, .cb-counter').addClass('d-none');
+            $this.cartButton.find('.cb-counter-label').text(data.items);
         }
 
 

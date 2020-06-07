@@ -13,11 +13,11 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js');
 mix.scripts([
-    'public/js/jquery.easing.1.3.js',
-    'public/js/jquery.waypoints.min.js',
-    'public/js/owl.carousel.min.js',
-    'public/js/aos.js',
-    'public/js/jquery.animateNumber.min.js',
+    'resources/js/jquery.easing.1.3.js',
+    'resources/js/jquery.waypoints.min.js',
+    'resources/js/owl.carousel.min.js',
+    'resources/js/aos.js',
+    'resources/js/jquery.animateNumber.min.js',
 ], 'public/js/vendor.js');
 
 mix.sass('resources/sass/app.scss', 'public/css');

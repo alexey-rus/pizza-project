@@ -27,7 +27,12 @@
                                                 <h3><a href="#">{{$product->name}}</a></h3>
                                                 <p>{{$product->description}}</p>
                                                 <p class="price"><span>${{$product->price}}</span></p>
-                                                <p><a href="#" class="js-add-cart btn btn-white btn-outline-white">Add to cart</a></p>
+                                                <p>
+                                                    <button class="js-add-cart btn btn-white btn-outline-white" type="button">
+                                                        <span class="spinner spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                        Add to cart
+                                                    </button>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

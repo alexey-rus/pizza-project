@@ -77,7 +77,10 @@
                         </label>
                     </div>
                     <div class="form-group mt-5">
-                        <button type="submit" class="btn btn-primary py-3 px-4">Order</button>
+                        <button type="submit" class="btn btn-primary py-3 px-4">
+                            <span class="spinner spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Order
+                        </button>
                     </div>
                 </form>
             </div>
