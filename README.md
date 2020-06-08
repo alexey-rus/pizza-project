@@ -8,7 +8,7 @@ Url: https://pizza-project-dev.herokuapp.com/
 <li>composer install</li>
 <li>cp .env.example .env</li>
 <li>php artisan key:generate</li>
-<li>set connection settings for mysql db</li>
+<li>set settings in .evn file for connection to your mysql db</li>
 <li>php artisan migrate:refresh --seed</li>
 </ol>
 For starting local server:
