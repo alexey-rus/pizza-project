@@ -25,12 +25,10 @@ mix.scripts([
 
 mix.sass('resources/sass/app.scss', 'public/css');
 mix.styles([
-    'resources/css/open-iconic-bootstrap.min.css',
     'resources/css/animate.css',
     'resources/css/owl.carousel.min.css',
     'resources/css/owl.theme.default.min.css',
     'resources/css/aos.css',
-    'resources/css/ionicons.css',
     'resources/css/flaticon.css',
     'resources/css/icomoon.css',
 ], 'public/css/vendor.css');

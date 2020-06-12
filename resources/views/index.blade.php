@@ -32,7 +32,7 @@
                     <p class="mb-4 mb-md-5">Get you pizza in 60 minutes or free</p>
                 </div>
                 <div class="col-md-6 ftco-animate">
-                    <img src="{{ asset('images/bg_1.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('images/bg_1.png') }}" class="img-fluid" alt="">
                 </div>
 
             </div>
