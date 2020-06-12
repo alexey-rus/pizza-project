@@ -2,9 +2,12 @@
 
 @section('title',  'The best pizza in town')
 
+@push('scripts')
+    <script src="{{ asset('js/pages/homepage.js') }}"></script>
+@endpush
 @section('content')
-<section class="home-slider owl-carousel img" style="background-image: url(/images/bg_1.jpg);">
-    <div class="slider-item" style="background-image: url(/images/bg_3.jpg);">
+<section class="home-slider owl-carousel img" style="background-image: url({{ asset('images/bg_1.jpg') }});">
+    <div class="slider-item" style="background-image: url({{ asset('images/bg_3.jpg') }});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -29,7 +32,7 @@
                     <p class="mb-4 mb-md-5">Get you pizza in 60 minutes or free</p>
                 </div>
                 <div class="col-md-6 ftco-animate">
-                    <img src="/images/bg_1.png" class="img-fluid" alt="">
+                    <img src="{{ asset('images/bg_1.jpg') }}" class="img-fluid" alt="">
                 </div>
 
             </div>
@@ -82,7 +85,7 @@
     </div>
 </section>
 
-<section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url(/images/bg_2.jpg);" data-stellar-background-ratio="0.5">
+<section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url({{ asset('images/bg_2.jpg') }});" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row justify-content-center">

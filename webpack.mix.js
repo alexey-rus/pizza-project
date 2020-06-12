@@ -11,7 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js');
+mix.js('resources/js/app.js',    'public/js');
+mix.js('resources/js/particles', 'public/js/particles');
+mix.js('resources/js/pages',     'public/js/pages');
+
 mix.scripts([
     'resources/js/jquery.easing.1.3.js',
     'resources/js/jquery.waypoints.min.js',

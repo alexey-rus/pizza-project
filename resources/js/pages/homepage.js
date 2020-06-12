@@ -5,13 +5,6 @@ AOS.init({
 
 (function ($) {
 
-    "use strict";
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
     const carousel = function () {
         $('.home-slider').owlCarousel({
             loop: true,
@@ -25,8 +18,7 @@ AOS.init({
             navText: ["<span class='ion-md-arrow-back'></span>", "<span class='ion-chevron-right'></span>"]
         });
 
-    };
-    carousel();
+    }();
 
     $('nav .dropdown').hover(function () {
         const $this = $(this);
@@ -62,8 +54,7 @@ AOS.init({
 
         }, {offset: '95%'});
 
-    };
-    counter();
+    }();
 
     const contentWayPoint = function () {
         let i = 0;
@@ -94,9 +85,7 @@ AOS.init({
 
             }
         }, {offset: '95%'});
-    };
-    contentWayPoint();
-
+    }();
 
 })(jQuery);
 
