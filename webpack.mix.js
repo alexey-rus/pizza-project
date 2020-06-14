@@ -12,8 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js',      'public/js');
-mix.js('resources/js/particles/*', 'public/js/particles');
-mix.js('resources/js/pages/*',     'public/js/pages');
+mix.js('resources/js/pages/order.js',     'public/js/pages').version();
+mix.js('resources/js/pages/homepage.js',     'public/js/pages').version();
 
 mix.scripts([
     'resources/js/jquery.easing.1.3.js',
@@ -23,7 +23,7 @@ mix.scripts([
     'resources/js/jquery.animateNumber.min.js',
 ], 'public/js/vendor.js');
 
-mix.sass('resources/sass/app.scss', 'public/css');
+mix.sass('resources/sass/app.scss', 'public/css').version();
 mix.styles([
     'resources/css/animate.css',
     'resources/css/owl.carousel.min.css',

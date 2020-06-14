@@ -4,7 +4,6 @@ class Cart {
         $this.products = $('.products .product');
         $this.cartButton = $('#cartButton');
         $this.cartPopup = $('#cartModal');
-        $this.toastMessage = $('#cartToast');
         $this.proxy();
         $this.initializeEvents();
     }
@@ -118,6 +117,4 @@ class Cart {
         return '$' + value;
     }
 }
-$(function () {
-    const cart = new Cart();
-});
+export { Cart };

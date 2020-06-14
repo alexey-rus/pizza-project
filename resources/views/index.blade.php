@@ -3,7 +3,7 @@
 @section('title',  'The best pizza in town')
 
 @push('scripts')
-    <script src="{{ asset('js/pages/homepage.js') }}"></script>
+    <script src="{{ mix('js/pages/homepage.js') }}"></script>
 @endpush
 @section('content')
 <section class="home-slider owl-carousel img" style="background-image: url({{ asset('images/bg_1.jpg') }});">

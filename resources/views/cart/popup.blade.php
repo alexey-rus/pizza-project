@@ -1,6 +1,3 @@
-@push('scripts')
-    <script src="{{ asset('js/particles/cart.js') }}"></script>
-@endpush
 <div id="cartButton" class="cart-button" data-toggle="modal" data-target="#cartModal">
     <div class="cb-wrapper">
         <div class="cb-icon">

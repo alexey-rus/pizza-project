@@ -2,7 +2,7 @@
 
 @section('title',  'Checkout page')
 @push('scripts')
-    <script src="{{ asset('js/pages/order.js') }}"></script>
+    <script src="{{ mix('js/pages/order.js') }}"></script>
 @endpush
 @section('content')
 @if (!$cart['isEmpty'])
