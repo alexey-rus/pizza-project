@@ -1,6 +1,16 @@
 import { Cart } from '../components/cart.js';
 import { Core } from '../components/core.js';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
+
+require('../vendors/jquery.animateNumber.min');
+require('../vendors/jquery.easing.1.3');
+require('../vendors/jquery.waypoints.min');
+
 class Homepage {
     constructor() {
         const $this = this;

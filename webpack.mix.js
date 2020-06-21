@@ -15,20 +15,10 @@ mix.js('resources/js/app.js',      'public/js');
 mix.js('resources/js/pages/order.js',     'public/js/pages').version();
 mix.js('resources/js/pages/homepage.js',     'public/js/pages').version();
 
-mix.scripts([
-    'resources/js/jquery.easing.1.3.js',
-    'resources/js/jquery.waypoints.min.js',
-    'resources/js/owl.carousel.min.js',
-    'resources/js/aos.js',
-    'resources/js/jquery.animateNumber.min.js',
-], 'public/js/vendor.js');
 
 mix.sass('resources/sass/app.scss', 'public/css').version();
 mix.styles([
     'resources/css/animate.css',
-    'resources/css/owl.carousel.min.css',
-    'resources/css/owl.theme.default.min.css',
-    'resources/css/aos.css',
     'resources/css/flaticon.css',
     'resources/css/icomoon.css',
 ], 'public/css/vendor.css');
